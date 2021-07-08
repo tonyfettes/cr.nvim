@@ -29,12 +29,12 @@ A typical keybindings will looks like:
 vim.api.nvim_set_keymap('n', '<cr>', "<cmd>lua require'cr'.jump_new_lines_after()<cr>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<S-cr>', "<cmd>lua require'cr'.jump_new_lines_before()<cr>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap('i', '<S-cr>', "<cmd>lua require'cr'.jump_new_lines_before()<cr>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<C-cr>', "<cmd>lua require'cr'.put_new_lines_after()<cr>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap('i', '<C-cr>', "<cmd>lua require'cr'.put_new_lines_after()<cr>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<C-S-cr>', "<cmd>lua require'cr'.put_new_lines_before()<cr>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap('i', '<C-S-cr>', "<cmd>lua require'cr'.put_new_lines_before()<cr>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<M-cr>', "<cmd>lua require'cr'.put_new_lines_after()<cr>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap('i', '<M-cr>', "<cmd>lua require'cr'.put_new_lines_after()<cr>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<M-S-cr>', "<cmd>lua require'cr'.put_new_lines_before()<cr>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap('i', '<M-S-cr>', "<cmd>lua require'cr'.put_new_lines_before()<cr>", { noremap = true, silent = true })
 ```
 
 ## Roadmap
 
-- [ ] Write document (`cr.txt`)
+- [x] Write document (`cr.txt`)
