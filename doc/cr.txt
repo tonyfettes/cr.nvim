@@ -1,0 +1,61 @@
+*cr.nvim* Insert new lines in any mode
+
+==============================================================================
+CONTENTS                                                           *cr-contents*
+
+  Introduction ·············································· |cr-introduction|
+  Requirements ·············································· |cr-requirements|
+    Lua API ······················································ |cr-lua-api|
+    Examples ···················································· |cr-examples|
+
+==============================================================================
+INTRODUCTION                                                *cr* *cr-introduction*
+
+cr.nvim is a plugin that provides several functions that insert new lines
+before or after current line. Compared to methods suggested by
+https://vim.fandom.com/wiki/Insert_newline_without_entering_insert_mode,
+calling functions provided by this plugin will not have the visual effects that
+the cursor shape change to block for a very short time on Neovim.
+
+==============================================================================
+REQUIREMENTS                                                   *cr-requirements*
+
+cr.nvim works only with Neovim. If you're using Vim, you could check
+vim-unimpaired created by tpope.
+
+==============================================================================
+USAGE                                                                 *cr-usage*
+
+Even though this plugin is created to enhance |<CR>| functionalities, this
+plugin does not provide any keybindings by default. So you have to do it
+yourself. Also, it has only Lua API for now.
+
+                                                                    *cr-lua-api*
+Lua API~
+
+`cr.put_new_lines_before()`                              *cr.put_new_lines_before*
+`cr.put_new_lines_after()`                                *cr.put_new_lines_after*
+    Insert [count] new lines without moving cursor.
+
+`cr.jump_new_lines_before()`                            *cr.jump_new_lines_before*
+`cr.jump_new_lines_after()`                              *cr.jump_new_lines_after*
+    Insert [count] new lines without moving cursor. Jump to the begin of newly
+    inserted new lines if `cr.jump_new_lines_before()` is called; jump to the
+    end of newly inserted new lines if `cr.jump_new_lines_after()` is called.
+
+                                                                   *cr-examples*
+Examples~
+
+For my personal setup
+>
+    nmap <CR>     :<C-u>lua require'cr'.jump_new_lines_after()<cr>
+    nmap <S-CR>   :<C-u>lua require'cr'.jump_new_lines_before()<cr>
+    imap <S-CR>   :<C-u>lua require'cr'.jump_new_lines_before()<cr>
+    nmap <M-CR>   :<C-u>lua require'cr'.put_new_lines_after()<cr>
+    imap <M-CR>   :<C-u>lua require'cr'.put_new_lines_after()<cr>
+    nmap <M-S-CR> :<C-u>lua require'cr'.put_new_lines_before()<cr>
+    imap <M-S-CR> :<C-u>lua require'cr'.put_new_lines_before()<cr>
+<
+
+==============================================================================
+vim:tw=78:sw=4:ts=8:ft=help:norl:
